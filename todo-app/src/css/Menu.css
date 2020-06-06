@@ -1,0 +1,45 @@
+.menu {
+    padding: 3%;
+}
+
+.title {
+    margin-bottom: 3%;
+}
+
+.dot {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: gray;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3%;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+.name {
+    line-height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.add-list-button {
+    background-color: transparent;
+    border: none;
+}
+
+.add-list-button:hover {
+    color: gray;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+}
+
+
+
