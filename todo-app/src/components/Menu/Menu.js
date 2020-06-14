@@ -1,14 +1,6 @@
 import React from 'react';
-import '../css/Menu.css'
-
-function Item(props) {
-    return (
-        <p>
-            <img src={props.item.icon} className="icon" alt="icon"/>
-            <button className="menu-btn" onClick={(item) => props.onMenuItemClick('Test')}>{props.item.title}</button>
-        </p>
-    )
-}
+import './Menu.css'
+import MenuItem from './MenuItem/MenuItem'
 
 class Menu extends React.Component {
 
@@ -22,15 +14,11 @@ class Menu extends React.Component {
             {title: 'Таймер', icon: 'https://image.flaticon.com/icons/svg/3003/3003126.svg'},
         ]
     }
-
-    onMenuItemClick = (item) => {
-        console.log(item)
-    }
-
+    
     render() {
         return (
             <div className='menu'>
-                <div className="title">
+                <div className="menu-title">
                     {this.state.title}
                 </div>
                 <div className="user">
@@ -38,7 +26,7 @@ class Menu extends React.Component {
                     <span className="name">{this.state.userName}</span>
                     <hr/>
                     {this.state.defaultMenu.map((item) => {
-                        return <Item item={item}/>
+                        return <MenuItem item={item}/>
                     })}
                     <hr/>
                     <button className='menu-btn'>+ Добавить лист</button>
