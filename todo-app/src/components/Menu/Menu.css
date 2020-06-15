@@ -33,6 +33,7 @@
 .menu-btn {
     background-color: transparent;
     border: none;
+    overflow: hidden;
 }
 
 .menu-btn:hover {

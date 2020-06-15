@@ -19,7 +19,7 @@ class List extends React.Component {
                 <div className="list-title-wrapper"><span className="list-title">{this.state.title}</span></div>
                 <ul className="list">
                     {this.state.items.map((item) => {
-                            return <ListItem item={item}/>
+                            return <ListItem item={item} key={item.task}/>
                         }
                     )}
                 </ul>

@@ -11,13 +11,13 @@ class MenuItem extends React.Component {
 
     render() {
         return (
-            <p>
+            <div className="menu-item">
                 <Icon item={this.props.item}/>
                 <button className="menu-btn"
                         onClick={this.onMenuItemClick.bind(this, this.props.item.title)}>
                     {this.props.item.title}
                 </button>
-            </p>
+            </div>
         )
     }
 }

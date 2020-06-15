@@ -1,6 +1,12 @@
 import React from 'react';
 import './Menu.css'
+
 import MenuItem from './MenuItem/MenuItem'
+import NewMenuField from "./NewMenuField/NewMenuField";
+
+import tasksIcon from '../../icons/tasks.png'
+import weekIcon from '../../icons/week.png'
+import timersIcon from '../../icons/time.png'
 
 class Menu extends React.Component {
 
@@ -9,12 +15,18 @@ class Menu extends React.Component {
         userName: 'Айнур Гимадеев',
         userShortName: 'АГ',
         defaultMenu: [
-            {title: 'Все задачи', icon: 'https://image.flaticon.com/icons/svg/839/839746.svg'},
-            {title: 'Неделя', icon: 'https://image.flaticon.com/icons/png/512/2934/2934065.png'},
-            {title: 'Таймер', icon: 'https://image.flaticon.com/icons/svg/3003/3003126.svg'},
-        ]
+            {title: 'Все задачи', icon: tasksIcon},
+            {title: 'Неделя', icon: weekIcon},
+            {title: 'Таймер', icon: timersIcon},
+        ],
+        userLists: [],
+        addingNewItem: false
     }
-    
+
+    addList() {
+        this.setState({addingNewItem: !this.state.addingNewItem});
+    }
+
     render() {
         return (
             <div className='menu'>
@@ -26,10 +38,17 @@ class Menu extends React.Component {
                     <span className="name">{this.state.userName}</span>
                     <hr/>
                     {this.state.defaultMenu.map((item) => {
-                        return <MenuItem item={item}/>
+                        return <MenuItem item={item} key={item.title}/>
                     })}
                     <hr/>
-                    <button className='menu-btn'>+ Добавить лист</button>
+                    {this.state.userLists.map((item) => {
+                        return <MenuItem item={item} key={item.title}/>
+                    })}
+                    {this.state.addingNewItem ? this.state.userLists.length === 0 ? <div><NewMenuField parent={this}/>
+                        <hr/>
+                    </div> : <NewMenuField parent={this}/> : null}
+                    {this.state.userLists.length !== 0 ? <hr/> : null}
+                    <button className='menu-btn' onClick={this.addList.bind(this)}>+ Добавить лист</button>
                 </div>
             </div>
         )
