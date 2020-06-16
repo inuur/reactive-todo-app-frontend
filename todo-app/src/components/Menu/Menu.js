@@ -38,7 +38,7 @@ class Menu extends React.Component {
                     <span className="name">{this.state.userName}</span>
                     <hr/>
                     {this.state.defaultMenu.map((item) => {
-                        return <MenuItem item={item} key={item.title}/>
+                        return <MenuItem item={item} key={item.title} parent={this.props.parent}/>
                     })}
                     <hr/>
                     {this.state.userLists.map((item) => {

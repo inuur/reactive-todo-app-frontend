@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from "./components/Menu/Menu";
-import List from "./components/List/List";
+import Todo from './components/Todo/Todo'
 
 ReactDOM.render(
-    <Menu/>,
-    document.getElementById('menu-root')
+    <Todo/>,
+    document.getElementById('root')
 );
 
-ReactDOM.render(
-    <List/>,
-    document.getElementById('list-root')
-);
 

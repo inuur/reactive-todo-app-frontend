@@ -1,12 +1,13 @@
 import React from "react";
 import './MenuItem.css'
+import Timer from '../../Timer/Timer'
 
 import Icon from './Icon/Icon'
+import Todo from "../../Todo/Todo";
 
 class MenuItem extends React.Component {
 
     onMenuItemClick(title) {
-        console.log(title);
     }
 
     render() {
@@ -14,7 +15,7 @@ class MenuItem extends React.Component {
             <div className="menu-item">
                 <Icon item={this.props.item}/>
                 <button className="menu-btn"
-                        onClick={this.onMenuItemClick.bind(this, this.props.item.title)}>
+                        onClick={() => {this.props.parent.setState({component: <Timer/>})}}>
                     {this.props.item.title}
                 </button>
             </div>
