@@ -6,7 +6,7 @@ import './Todo.css'
 class Todo extends React.Component {
 
     state = {
-        component: <List items={[1, 2, 3]}/>
+        component: <List/>
     }
 
     changeContent(component) {

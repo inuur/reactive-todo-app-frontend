@@ -9,7 +9,13 @@ class List extends React.Component {
         items: [
             {task: 'todo 1', date: null},
             {task: 'todo 2', date: null},
-            {task: 'todo 3', date: null}
+            {task: 'todo 3', date: null},
+            {task: 'todo 1', date: null},
+            {task: 'todo 2', date: null},
+            {task: 'todo 3', date: null},
+            {task: 'todo 1', date: null},
+            {task: 'todo 2', date: null},
+            {task: 'todo 3', date: null},
         ]
     }
 
@@ -18,7 +24,7 @@ class List extends React.Component {
             <div>
                 <div className="list-title-wrapper"><span className="list-title">{this.state.title}</span></div>
                 <ul className="list">
-                    {this.props.items.map((item) => {
+                    {this.state.items.map((item) => {
                             return <ListItem item={item} key={item.task}/>
                         }
                     )}
