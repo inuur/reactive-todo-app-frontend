@@ -1,0 +1,49 @@
+.timer-wrapper {
+    height: 97vh;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+}
+
+.timer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 40vh;
+}
+
+.counter {
+    height: 60%;
+    font-size: 500%;
+}
+
+.btn-group {
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.m-bt {
+    background-color: red;
+    width: 30%;
+    height: 40%;
+    border-radius: 7px;
+}
+
+.start-btn {
+    background-color: #DADCD9;
+}
+
+.pause-btn {
+    background-color: #5C684F;
+}
+
+.restart-btn {
+    background-color: #DA982F;
+}
